@@ -13,7 +13,17 @@ from Authentication.authy import router as auth_router
 from Chat.chat import router as chat_router
 from Logs.logs import router as logs_router
 from Tasks.time_traking import router as time_tracking_router
+from sqlalchemy.orm import Session
+from database.database import SessionLocal
 
+@app.get("/health")
+def health_check():
+    try:
+        db: Session = SessionLocal()
+        db.execute("SELECT 1")
+        return {"status": "connected"}
+    except Exception as e:
+        return {"error": str(e)}
 # Create all tables
 Base.metadata.create_all(bind=engine)
 

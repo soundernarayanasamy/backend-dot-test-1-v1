@@ -12,11 +12,11 @@ DB_USER = urllib.parse.quote_plus(os.getenv("DB_USER"))
 DB_PASSWORD = urllib.parse.quote_plus(os.getenv("DB_PASSWORD"))
 DB_HOST = os.getenv("DB_HOST")
 
-# Database connection URL (Fixed for employeee_task)
-DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/employeee_task"
+# Database connection URL (Fixed for sql12779359)
+DB_HOST = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/sql12779359"
 
 # Create the engine and session maker
-engine = create_engine(DATABASE_URL, pool_size=10, max_overflow=5)
+engine = create_engine(DB_HOST, pool_size=10, max_overflow=5)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Function to get the database session (for FastAPI)

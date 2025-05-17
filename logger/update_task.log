@@ -255,7 +255,7 @@ Traceback (most recent call last):
     self._raise_for_prerequisite_state(fn.__name__, current_state)
   File "D:\Task Management System Final code\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 973, in _raise_for_prerequisite_state
     raise sa_exc.PendingRollbackError(
-sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1452, 'Cannot add or update a child row: a foreign key constraint fails (`employeee_task`.`task_update_logs`, CONSTRAINT `task_update_logs_ibfk_2` FOREIGN KEY (`updated_by`) REFERENCES `users` (`employee_id`))')
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1452, 'Cannot add or update a child row: a foreign key constraint fails (`sql12779359`.`task_update_logs`, CONSTRAINT `task_update_logs_ibfk_2` FOREIGN KEY (`updated_by`) REFERENCES `users` (`employee_id`))')
 [SQL: INSERT INTO task_update_logs (task_id, field_name, old_value, new_value, updated_by, updated_at) VALUES (%(task_id)s, %(field_name)s, %(old_value)s, %(new_value)s, %(updated_by)s, %(updated_at)s)]
 [parameters: {'task_id': 11, 'field_name': 'status', 'old_value': 'Completed', 'new_value': 'New', 'updated_by': 0, 'updated_at': datetime.datetime(2025, 4, 30, 11, 43, 12, 72626)}]
 (Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
@@ -298,7 +298,7 @@ Traceback (most recent call last):
     self._raise_for_prerequisite_state(fn.__name__, current_state)
   File "D:\Task Management System Final code\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 973, in _raise_for_prerequisite_state
     raise sa_exc.PendingRollbackError(
-sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1452, 'Cannot add or update a child row: a foreign key constraint fails (`employeee_task`.`task_update_logs`, CONSTRAINT `task_update_logs_ibfk_2` FOREIGN KEY (`updated_by`) REFERENCES `users` (`employee_id`))')
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1452, 'Cannot add or update a child row: a foreign key constraint fails (`sql12779359`.`task_update_logs`, CONSTRAINT `task_update_logs_ibfk_2` FOREIGN KEY (`updated_by`) REFERENCES `users` (`employee_id`))')
 [SQL: INSERT INTO task_update_logs (task_id, field_name, old_value, new_value, updated_by, updated_at) VALUES (%(task_id)s, %(field_name)s, %(old_value)s, %(new_value)s, %(updated_by)s, %(updated_at)s)]
 [parameters: {'task_id': 11, 'field_name': 'status', 'old_value': 'Completed', 'new_value': 'New', 'updated_by': 0, 'updated_at': datetime.datetime(2025, 4, 30, 11, 44, 34, 100422)}]
 (Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
