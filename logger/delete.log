@@ -1,0 +1,3 @@
+2025-05-02 13:28:31,559 - delete - INFO - DELETE requested by user_id=1
+2025-05-02 13:28:31,577 - delete - INFO - Marked checklists as deleted: [2]
+2025-05-02 13:28:31,587 - delete - INFO - Deletion process completed successfully.
