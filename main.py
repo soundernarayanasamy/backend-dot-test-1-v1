@@ -16,6 +16,15 @@ from Tasks.time_traking import router as time_tracking_router
 from sqlalchemy.orm import Session
 from database.database import SessionLocal
 
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from models.models import Base
+from database.database import engine, SessionLocal
+from sqlalchemy.orm import Session
+
+# Define the FastAPI app first
+app = FastAPI(root_path="/taskmanager")
+
 @app.get("/health")
 def health_check():
     try:
@@ -24,10 +33,9 @@ def health_check():
         return {"status": "connected"}
     except Exception as e:
         return {"error": str(e)}
+
 # Create all tables
 Base.metadata.create_all(bind=engine)
-
-app = FastAPI(root_path="/taskmanager")
 
 # Enable CORS
 app.add_middleware(
